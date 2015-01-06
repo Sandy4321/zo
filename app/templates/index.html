@@ -9,7 +9,7 @@
         {{ form.hidden_tag() }}
 	<table align="center" width=65% width="100%" cellspacing="2" cellpadding="2" border="15" BORDERCOLOR="#000066">
 	<tr>
-	<td colspan="2" align="center">Human<img src="../static/image/photo.jpg" width="150" height="150">Resource</td>
+	<td colspan="2" align="center">Human<img src="../static/image/photo.jpg" width="150" height="150">Resources</td>
 	</tr>
 	<tr>
 	<td align="left" valign="top" width="41%" value="firstname">Employee First Name<span style="color:red">*</span></td>
@@ -77,6 +77,15 @@
 	</tr>
 
     <tr>
+    <tr>
+        <td>Position</td>
+        <td>
+            <ul class="dropdown-menu">
+                <li value="fulltime">Full Time</li>
+                <li value="intern">Intern</li>
+            </ul>
+        </td>
+    </tr>
 	<td align="left" valign="top" width="41%" >Infrastructure<span style="color:red">*</span></td>
 	<td width="57%"><input type = "checkbox" value="" id = "Infrastructure" name="Infrastructure"></td>
 	</tr>

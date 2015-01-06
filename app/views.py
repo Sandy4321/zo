@@ -1,18 +1,22 @@
-from flask import render_template
-from app import app
-from flask import request, abort
-from app.db import gd_client, spreadsheet_id, worksheet_id
-from wtforms import Form, BooleanField, TextField, PasswordField, validators, IntegerField, FormField
 import gdata
-from flask import render_template, flash, redirect, url_for
+
 from app import app
+from app.db import gd_client, spreadsheet_id, worksheet_id
+
+from flask import request, abort
+from flask import render_template
+from flask import flash, redirect, url_for
+
 from flask.ext.wtf import Form
+
 from wtforms import StringField, BooleanField
-from wtforms.validators import DataRequired
+from wtforms import TextField, PasswordField, validators, IntegerField, FormField
+
 from wtforms.widgets import TextArea
-from flask.ext.wtf import Form
-from wtforms import StringField, BooleanField
-from wtforms.validators import DataRequired, Length
+
+from wtforms.validators import DataRequired
+from wtforms.validators import Length
+
 
 class loginForm(Form):
     email_regex = '^[a-zA-Z0-9]+$|^[a-zA-Z0-9]+@gmail.com$'
@@ -35,9 +39,11 @@ class submitForm(Form):
     address1 = StringField('Address1', widget = TextArea(), validators = [DataRequired(),Length(min = 1, max = 50)])
     address2 = StringField('Address2', widget = TextArea(), validators = [DataRequired(),Length(min = 1, max = 50)])
 
+
 @app.route('/confirm', methods = ['POST'])
 def confirm():
    return render_template('confirm.html', title = 'Confirmation!!!', posts=request.form)
+
 
 @app.route('/submit', methods = ['POST'])
 def entry():
@@ -49,6 +55,7 @@ def entry():
    entry.from_dict(request.form)
    gd_client.add_list_entry(entry,spreadsheet_id,worksheet_id)
    return render_template('submit.html', title = 'Conngratulation!!!', user=request.form['firstname'])
+
 
 @app.route('/index.html', methods = ['GET', 'POST'])
 @app.route('/', methods = ['GET', 'POST'])
