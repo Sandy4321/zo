@@ -52,3 +52,12 @@ docs/_build/
 
 # PyBuilder
 target/
+
+config.py
+
+creds.dat
+
+client_secrets.json
+
+.DS_Store
+.idea/
