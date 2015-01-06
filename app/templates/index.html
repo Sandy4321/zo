@@ -21,7 +21,7 @@
         </td>
 	</tr>
 	<tr>
-	<td align="left" valign="top" width="41%" >Employee Last Name<span style="color:red">*</span></td>
+	<td align="left" valign="top" width="41%" value="lastname">Employee Last Name<span style="color:red">*</span></td>
 	<td width="57%">
           {{ form.lastname(size=30) }}
           {% for error in form.lastname.errors %}
@@ -29,8 +29,17 @@
           {% endfor %}<br>
         </td>
 	</tr>
+    <tr>
+	<td align="left" valign="top" width="41%" value="role">Role<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.role(size=30) }}
+          {% for error in form.role.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+        </td>
+	</tr>
 	<tr>
-	<td align="left" valign="top" width="41%">Address 1<span style="color:red">*</span></td>
+	<td align="left" valign="top" width="41%" value="address1">Address 1<span style="color:red">*</span></td>
 	<td width="57%">
           {{ form.address1(cols="32", rows="5") }}
           {% for error in form.address1.errors %}
@@ -38,11 +47,21 @@
           {% endfor %}<br>
         </td>
 	</tr>
+
         <tr>
-	<td align="left" valign="top" width="41%">Address 2<span style="color:red">*</span></td>
+	<td align="left" valign="top" width="41%" value="address2">Address 2<span style="color:red">*</span></td>
 	<td width="57%">
           {{ form.address2(cols="32", rows="5") }}
           {% for error in form.address2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+        </td>
+	</tr>
+        <tr>
+	<td align="left" valign="top" width="41%">Active<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.active(cols="32", rows="5") }}
+          {% for error in form.active.errors %}
             <span style="color: red;">[{{ error }}]</span>
           {% endfor %}<br>
         </td>
@@ -55,6 +74,11 @@
             <span style="color: red;">[{{ error }}]</span>
           {% endfor %}<br>
         </td>
+	</tr>
+
+    <tr>
+	<td align="left" valign="top" width="41%" >Infrastructure<span style="color:red">*</span></td>
+	<td width="57%"><input type = "checkbox" value="" id = "Infrastructure" name="Infrastructure"></td>
 	</tr>
 	<tr>
 	<td align="left" valign="top" width="41%" >Steering<span style="color:red">*</span></td>

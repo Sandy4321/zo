@@ -35,8 +35,11 @@
       <tr>
         <td align="center"><b><strong style="font-family:italic"><br/>First Name</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>Last Name</strong></td>
+        <td align="center"><b><strong style="font-family:italic"><br/>Role</strong></td>
+        <td align="center"><b><strong style="font-family:italic"><br/>Active</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>Address1</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>Address2</strong></td>
+        <td align="center"><b><strong style="font-family:italic"><br/>Infrastructure</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>Contact number</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>Steering</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>Meta science</strong></td>
@@ -47,9 +50,12 @@
       <tr>
         <td align="center"><b><strong style="font-family:italic"><br/>{{posts['firstname']}}</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>{{posts['lastname']}}</strong></td>
+        <td align="center"><b><strong style="font-family:italic"><br/>{{posts['role']}}</strong></td>
+        <td align="center"><b><strong style="font-family:italic"><br/>{{posts['active']}}</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>{{posts['address1']}}</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>{{posts['address2']}}</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>{{posts['contact']}}</strong></td>
+        <td align="center"><b><strong style="font-family:italic"><br/>{% if 'infrastructure' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>{% if 'steering' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>{% if 'metascience' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}</strong></td>
         <td align="center"><b><strong style="font-family:italic"><br/>{% if 'developer' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}</strong></td>
@@ -65,9 +71,12 @@
       <input type = button name="zobair" class="btn btn-primary" value="Go ahead and Submit" onclick="post('/submit',
       {'firstname'       : '{{posts['firstname']}}',
        'lastname'        : '{{posts['lastname']}}',
-       'address1'         : '{{posts['address1']}}',
-       'address2'         : '{{posts['address2']}}',
+       'role'            : '{{posts['role']}}',
+       'active'          : '{{posts['active']}}',
+       'address1'        : '{{posts['address1']}}',
+       'address2'        : '{{posts['address2']}}',
        'contact'         : '{{posts['contact']}}',
+       'infrastructure'  : '{% if 'infrastructure' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}',
        'steering'        : '{% if 'steering' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}',
        'metascience'     : '{% if 'metascience' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}',
        'developer'       : '{% if 'developer' in posts.keys() %}{{'Yes'}}{% else %}{{'No'}}{% endif %}',
