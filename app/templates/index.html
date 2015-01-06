@@ -80,10 +80,10 @@
     <tr>
         <td>Position</td>
         <td>
-            <ul class="dropdown-menu">
-                <li value="fulltime">Full Time</li>
-                <li value="intern">Intern</li>
-            </ul>
+            <select>
+                <option value="fulltime">Full Time</option>
+                <option value="intern">Intern</option>
+            </select>
         </td>
     </tr>
 	<td align="left" valign="top" width="41%" >Infrastructure<span style="color:red">*</span></td>
@@ -106,8 +106,8 @@
 	<td width="57%"><input type = "checkbox" value="" id = "developer-intern" name="developer-intern"></td>
 	</tr>
 	<tr>
-	<td align="left" valign="top" width="41%">Email<span style="color:red">*</span></td>
-	<td width="57%">
+	   <td align="left" valign="top" width="41%">Email<span style="color:red">*</span></td>
+	   <td width="57%">
           {{ form.email(size=30) }}
           {% for error in form.email.errors %}
             <span style="color: red;">[{{ error }}]</span>
