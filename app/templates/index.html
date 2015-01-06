@@ -1,0 +1,105 @@
+<title>
+
+</title>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" name="index" id="formUnbook" method="post">
+        {{ form.hidden_tag() }}
+	<table align="center" width=65% width="100%" cellspacing="2" cellpadding="2" border="15" BORDERCOLOR="#000066">
+	<tr>
+	<td colspan="2" align="center">Human<img src="../static/image/photo.jpg" width="150" height="150">Resource</td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%" value="firstname">Employee First Name<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.firstname(size=30) }}
+          {% for error in form.firstname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+        </td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%" >Employee Last Name<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.lastname(size=30) }}
+          {% for error in form.lastname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+        </td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%">Address 1<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.address1(cols="32", rows="5") }}
+          {% for error in form.address1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+        </td>
+	</tr>
+        <tr>
+	<td align="left" valign="top" width="41%">Address 2<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.address2(cols="32", rows="5") }}
+          {% for error in form.address2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+        </td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%" >Contact Number<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.contact(size=30) }}
+          {% for error in form.contact.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+        </td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%" >Steering<span style="color:red">*</span></td>
+	<td width="57%"><input type = "checkbox" value="" id = "steering" name="steering"></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%" id="meta">Meta-Science<span style="color:red">*</span></td>
+	<td width="57%"><input type = "checkbox" value="" id = "metascience" name="metascience"></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%" id="develop">Developer<span style="color:red">*</span></td>
+	<td width="57%"><input type = "checkbox" value="" id = "developer" name="developer"></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%" id="intern">Developer Intern<span style="color:red">*</span></td>
+	<td width="57%"><input type = "checkbox" value="" id = "developer-intern" name="developer-intern"></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%">Email<span style="color:red">*</span></td>
+	<td width="57%">
+          {{ form.email(size=30) }}
+          {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}COS.io<br>
+        </td>
+	</tr>
+	<br/>
+	<br/>
+	<tr>
+	<td colspan="2">
+	<p align="center">
+	<br/>
+	<br/>
+	<input type="submit" class="btn btn-primary" value=" Submit" name="B4">
+	<input type="reset" class="btn btn-primary" value=" Reset All " name="B5"></td>
+	</tr>
+
+	</table>
+	</form>
+
+<form>
+<table align="center" width=65% width="100%" cellspacing="2" cellpadding="2" border="15" BORDERCOLOR="000066"><tr>
+<td colspan="2" align="center"><br/><b>No-Email? Please Sign up for one: </b> <a href = "https://osf.io/" target="_blank">click here</a><br/><br/></td>
+<br/>
+</tr>
+</table>
+</form>
+{% endblock %}

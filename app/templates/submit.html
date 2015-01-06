@@ -1,0 +1,23 @@
+<html>
+ <head>
+  <title>Congratulations!!!</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script>
+ $(document).ready(function(){
+   $("h3").hover(function(){
+     var div=$("div");
+     div.animate({left:'100px'},"slow");
+     div.animate({fontSize:'3em'},"slow");
+   });
+ });
+</script>
+ </head>
+ <body>
+  <br/>
+  <br/>
+  <center>
+  	<div style="background:#98bf21;height:200px;width:900px;position:center;">
+    <h3>Thank you  {{user}}, you have been successfully registered in COS spreadsheet database</h3>
+  </center>
+ </body>
+</html>
