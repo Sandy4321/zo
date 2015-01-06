@@ -61,3 +61,5 @@ client_secrets.json
 
 .DS_Store
 .idea/
+
+*.pyc
