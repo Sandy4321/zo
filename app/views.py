@@ -18,6 +18,8 @@ class loginForm(Form):
     email_regex = '^[a-zA-Z0-9]+$|^[a-zA-Z0-9]+@gmail.com$'
     firstname = StringField('Firstname', validators = [DataRequired()])
     lastname = TextField('Lastname', validators = [DataRequired()])
+    role = TextField('role', validators = [DataRequired()])
+    active = TextField('active', validators = [DataRequired()])
     email = TextField('Email', [validators.Regexp(message = 'Incorrect email', regex = email_regex)])
     contact = TextField('Contact', validators = [validators.Regexp(message ='E.g(xxx)xxx-xxxx', regex ='^[0-9]{10}$')])
     address1 = StringField('Address1', widget = TextArea(), validators = [DataRequired(),Length(min = 1, max = 50)])
@@ -26,6 +28,8 @@ class loginForm(Form):
 class submitForm(Form):
     firstname = StringField('Firstname', validators = [DataRequired(), Length(min = 1, max = 20)])
     lastname = TextField('Lastname', validators = [DataRequired(),Length(min = 1, max = 20)])
+    role = TextField('role', validators = [DataRequired(),Length(min = 1, max = 20)])
+    active = TextField('active', validators = [DataRequired(),Length(min = 1, max = 20)])
     email = TextField('Email', [validators.Email(),Length(min = 1, max = 20)])
     contact = TextField('Contact',validators = [validators.Regexp(message='use this format (xxx)xxx-xxxx', regex='^[0-9]{10}$')])
     address1 = StringField('Address1', widget = TextArea(), validators = [DataRequired(),Length(min = 1, max = 50)])
